@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Responsive dropdown menu - Bedimcode</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!--=============== CSS ===============-->
+  <link rel="stylesheet" href="pagina.css">
+</head>
+
+<body>
+
+  <!-- Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Detalhes do Produto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="" class="img-fluid mb-3" alt="Imagem do Produto" id="modalProductImage">
+        <h5 id="modalProductName"></h5>
+        <p class="text-muted" id="modalProductPrice"></p>
+        <p id="modalProductDescription"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Comprar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark p-4" style="background-color: #23232e; box-shadow: 0 2px 16px #23232e;">
+  <div class="container">
+    <a class="navbar-brand" href="pagina.html"><img src="image-removebg-preview (7).png" style="width: 160px;"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-4 fs-5">
+        <li class="nav-item">
+          <a class="img-fluid" aria-current="page" href="#"><img src="image-removebg-preview (1).png" alt="" style="height: 20px; margin-top: 8px;"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="roupas.html">Roupas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="brinquedos.html">Brinquedos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="esportes.html">Esportes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="moveis.html">Móveis</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="eletronicos.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Eletrônicos
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" style="background-color: #23232e; border: none;" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="celulares.html">Celulares</a></li>
+            <li><a class="dropdown-item" href="notebooks.html">Notebooks</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="cadastro.html">Cadastre-se</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <button type="button" class="btn text-white fs-5" style="background-color: #3498db; border: none;" id="botaoLogin"> <a href="login.html">Login</a></button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+  <div class="mais-vendidos container d-flex align-items-center justify-content-center">
+    <div class="col-lg-3 p-2 bg text-white mt-5 rounded text-center justify-content-center" style="background-color: #23232e;">
+      <h1 class="fs-3 mt-auto mb-auto mais-vendidos"><b>Brinquedos</b></h1>
+    </div>
+  </div>
+
+  <div class="container text-center px-5">
+    <div class="row row-cols-1 row-cols-md-4 g-4 align-items-center justify-content-center mt-4 grid gap-0 column-gap-4">
+       <!-- Card 1 -->
+       <div class="col mb-2" style="border: solid #23232e 2px; border-radius: 7px;">
+        <button type="button" class="btn card-btn" data-bs-toggle="modal" data-bs-target="#productModal" onclick="loadProductDetails('Brinquedo KIDS', '1700', 'Mais novo lançamento KIDS.', 'brinquedos2.jpg')">
+          <img src="brinquedos2.jpg" class="card-img-top" alt="Produto 1">
+          <div class="card-body">
+            <h5 class="card-title">brinquedo KIDS</h5>
+            <p class="card-text">R$1700,00</p>
+          </div>
+        </button>
+      </div>
+       
+       <!-- Card 2 -->
+       <div class="col mb-2" style="border: solid #23232e 2px; border-radius: 7px;">
+        <button type="button" class="btn card-btn" data-bs-toggle="modal" data-bs-target="#productModal" onclick="loadProductDetails('Bola Colorida', '399,00', 'Mega bola divertida.', 'brinquedo1.jpg')">
+          <img src="brinquedo1.jpg" class="card-img-top" alt="Produto 1">
+          <div class="card-body">
+            <h5 class="card-title">Bola Colorida</h5>
+            <p class="card-text">R$399,00</p>
+          </div>
+        </button>
+      </div>
+       
+       <!-- Card 3 -->
+       <div class="col mb-2" style="border: solid #23232e 2px; border-radius: 7px;">
+        <button type="button" class="btn card-btn" data-bs-toggle="modal" data-bs-target="#productModal" onclick="loadProductDetails('Bike Vermelha', '250,00', 'Muito comprada pelas crianças.', 'bikever.jpg')">
+          <img src="bikever.jpg" class="card-img-top" alt="Produto 1">
+          <div class="card-body">
+            <h5 class="card-title">Bike Vermelha</h5>
+            <p class="card-text">R$250,00</p>
+          </div>
+        </button>
+      </div>
+    </div>
+ </div>
+
+ <!-- Black Division Section -->
+ <div class="mt-5 mb-4" style="height: 20px; background-color: #23232e;"></div>
+
+ <div class="container text-center px-5">
+    <div class="row row-cols-1 row-cols-md-4 g-4 align-items-center justify-content-center mt-4 grid gap-0 column-gap-4">
+       <!-- Card 1 -->
+       <div class="col mb-2" style="border: solid #23232e 2px; border-radius: 7px;">
+        <button type="button" class="btn card-btn" data-bs-toggle="modal" data-bs-target="#productModal" onclick="loadProductDetails('bike Azul', '350,00', 'Para voce que quer perder alguns KG!', 'bikeazul.jpg')">
+          <img src="bikeazul.jpg" class="card-img-top" alt="Produto 1">
+          <div class="card-body">
+            <h5 class="card-title">Bike Azul</h5>
+            <p class="card-text">R$350,00</p>
+          </div>
+        </button>
+      </div>
+       
+       <!-- Card 2 -->
+       <div class="col mb-2" style="border: solid #23232e 2px; border-radius: 7px;">
+        <button type="button" class="btn card-btn" data-bs-toggle="modal" data-bs-target="#productModal" onclick="loadProductDetails('Fidget Spinner', '30,00', 'Brinquedo para tirar o estresse.', '5283-removebg-preview.png')">
+          <img src="5283-removebg-preview.png" class="card-img-top" alt="Produto 1">
+          <div class="card-body">
+            <h5 class="card-title">Fidget Spinner</h5>
+            <p class="card-text">R$30,00</p>
+          </div>
+        </button>
+      </div>
+       
+       <!-- Card 3 -->
+       <div class="col mb-2" style="border: solid #23232e 2px; border-radius: 7px;">
+        <button type="button" class="btn card-btn" data-bs-toggle="modal" data-bs-target="#productModal" onclick="loadProductDetails('Bola Basquete', '99,90', 'Qualidade Garantida.', 'bolabasquete.jpg')">
+          <img src="bolabasquete.jpg" class="card-img-top" alt="Produto 1">
+          <div class="card-body">
+            <h5 class="card-title">Bola Basquete</h5>
+            <p class="card-text">R$99,90</p>
+          </div>
+        </button>
+      </div>
+    </div>
+ </div>
+
+        <footer class="rodape">
+          <div class="conteudo-rodape">
+              <div class="logo-rodape"><img src="image-removebg-preview (7).png" alt="" style="width: 90px;"></div>
+              <div class="celular-emoji">📱</div>
+              <div class="contate-botao"><a href="https://web.whatsapp.com/"><button>Contate</button></a></div>
+              <div class="email-rodape">Email: timoteoviado_gay@gmail.com</div>
+              <div class="redes-sociais">
+                 <a href="https://www.youtube.com/" target="_blank"><img src="044b8803-c0ec-4fbc-bc3c-b2265789835a-removebg-preview (1).png" alt="YouTube" height="25px"></a> 
+                 <a href="https://www.facebook.com/"target="_blank"> <img src="24bb1d79-9b0c-44b8-b1f3-23244ff4cd36-removebg-preview (1).png" alt="Facebook" height="25px" ></a>
+                 <a href="https://www.instagram.com/"target="_blank"> <img src="8787cb0f-a220-446a-bb2e-f47da115b8e5-removebg-preview (1).png" alt="Instagram" height="25px"></a>
+          </div>
+      </footer>
+ 
+  
+
+  <!--=============== MAIN JS ===============-->
+  <script src="pagina.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>
